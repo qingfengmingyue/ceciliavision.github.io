@@ -1,5 +1,5 @@
 @Cecilia Zhang
-Perconal website
+Personal website
 
 Credits:
 	Demo Images:
