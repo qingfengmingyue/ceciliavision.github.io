@@ -1235,6 +1235,65 @@
                 display: none;
             }
 
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body, html {
+    height: 100%
+}
+
+/* countdown */
+    .bgimg {
+        /* Background image */
+        background-image: url('../../images/ctdown/rice.png');
+        opacity: 0.7;
+        /* Full-screen */
+        height: 100%;
+        width: auto;
+
+        /* Center the background image */
+        /*background-position: center;*/
+        /* Scale and zoom in the image */
+        background-size: cover;
+        
+        /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+        position: relative;
+        /* Add a white text color to all elements inside the .bgimg container */
+        color: black;
+        /* Add a font */
+        font-family: "Courier New", Courier, monospace;
+        /*font-size: 25px;*/
+    }
+
+    /* Position text in the top-left corner */
+    .topleft {
+        position: relative;
+        top: 16px;
+        left: 16px;
+        font-size: 20pt;
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    /* Position text in the bottom-left corner */
+    .bottomleft {
+        position: relative;
+        bottom: 0;
+        left: 16px;
+    }
+
+    /* Position text in the middle */
+    .middle {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /* Style the <hr> element */
+    hr {
+        margin: auto;
+        width: 40%;
+    }
+
 /* Desktop */
 
     @media screen and (min-width: 737px) {
