@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>BLOG-CZ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main2.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html#blog">Back to blog</a></h1>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">The Cardboard Effect - A real person or a paper figure?</a></h2>
+										<p>A mini lecture I gave for the class "Seeing in Time, Space and Color".</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2019-03-18">March 18, 2019</time>
+										<a href="index.html" class="author"><span class="name">Cecilia Zhang</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<!-- <o><font face="Raleway" color="#bbbbbb">REFLECTION</font></o> -->
+								<p>
+									Most of the contemporary 3D image (here I use the word 'image' to refer to overall visible appearance, including videos) systems, such as 3D movie theaters, use binocular disparity method. I won't go into detail talking about disparity, but long story short, it's the difference between the left-right retina images of the same point in the real world that provides the sense of relative depth. Most of these 3D contents (e.g. 3D movies) are shot with a pair of cameras that function like the left and right human eyes. For these recording and projection systems to really work, meaning the projected 3D contents have no visible distortion and can make the viewers feel as if they are standing exactly at the position where the cameras are placed, the cameras need to have precise amount of separation, focal length, and other imaging parameters, and apparently these are so challenging that current technology cannot achieve such perfection. It is quite unfortunate as it's found by a pyschovisual (psychology of vision) study that, "only when no artifacts were visible , was stereoscopic imagery preferred".
+								</p>
+								<p>
+									The distortion discussed in this blog is called the "cardboard cutoff effect". As its name suggests, it's a phenomenon in which 3D objects set at different depths appear flat to viewers, as if they were made of cardboard/paper, although their relative depth distances from one another are somewhat maintained. It's interesting to think that this distortion is actually "man-made". It's not present in the real, natural world, or caused by our visual system interacting with photons. Cardboard effect only appears when we try to re-create the 3D world and put it onto a screen to view (it sounds like we lay up trouble for ourselves &#9786). Therefore most discussions around it is largely related to 3D film-making, and mostly on how to <i>avoid</i> such distortion. 
+								</p>
+								<figure>
+									<center>
+										<img src="https://dl.dropboxusercontent.com/s/vw0f3prxq4ptrc0/cardboard.png?dl=0" alt="3d-image" style="float:center; width:90%;">
+										<figcaption style="text-align: center;"><font face="Raleway" color="#bbbbbb">Fig.1 - 3D photos that exhibit cardboard effect. Use a pair of 3D green-red glasses to view these two examples. Note to tilt your head a bit as the disparity is not purely horizontal in the left example. Do you feel the figures have little thickness that they look like cardboard-made 2D paper figures? (relative depth is preserved, e.g. you can identify that the subjects locate at different depths.)</font></figcaption>
+									</center>
+								</figure>
+								<br>
+								<p>
+									It's reported that this "flat" feeling of 3D contents is present in almost all feature movies, including Avatar, Pirates of the Caribbean (on Strange Tides), and Titanic in 3D. These are three representative movie examples demonstrating the wide range of sources that cause the cardboard effect. <i>Titanic</i> was shot in 2D and converted to 3D. This indicates that the cardboard effect can originate from the post-processing stage where the technology fails to create the correct disparity at each pixel. This makes sense as the 3D is simulated. By the way, it's a great pleasure to read <a href="https://www.extremetech.com/extreme/124965-titanic-how-do-you-convert-a-movie-to-3d-anyway" target="_blank">this article</a> about how James Cameron and his team of 450 artists convert his masterpiece from 2D to 3D. Such a dedication and enthusiasm! <i>Pirates of the Caribbean</i> is shot with stereo cameras, inferring the image recording phase plays a role in this cardboard artifact as well. <i>Avatar</i> is a computer-generated film where scenes are rendered with full modeling of the 3D space, this seems to rule out the recording and post-processing stages. The left-over "culprit" is the stage of display and viewing, which also affect the presence of the cardboard effect. In summary, the cardboard effect may come from all three stages of the pipeline: recording, post-processing and display/viewing, as illustrated below.
+								</p>
+								<figure>
+									<center>
+										<img src="https://dl.dropboxusercontent.com/s/7l1izbczrfmf7xs/stereo-source.png?dl=0" alt="3d-image" style="float:center; width:80%;">
+										<figcaption style="text-align: center;"><font face="Raleway" color="#bbbbbb">Fig.2 - An illustration of the "culprits" of the cardboard effect.</font></figcaption>
+									</center>
+								</figure>
+								<br>
+								<p>
+									I will focus on the recording stage, by first outlining imaging principles that can theoretically alleviate the cardboard effect, and then show how researchers conduct control experiments to validate their hypothesis.
+								</p>
+								<o><font face="Raleway" color="#bbbbbb">IMAGING PRINCIPLES</font></o>
+								<p>
+									<ul style="margin-top:-30px;">
+										<li> Stereo Basis / Camera Baseline: </li>
+										<p>
+											Camera baseline denotes the distance between the pair of cameras used to shoot the scene, corresponding to the interocular distance between the centers of the pupils of our eyes (63-66 mm for a normal adult). This distance determines the visual angle of the camera viewing the object. The figure below draws two pairs of cameras with different stereo basis viewing a close object and a far object. The visual angles extended by a pair of camera differ in 1) viewing the same object, and 2) the decreasing rate of viewing objects at different depths.
+										</p>
+										<figure>
+											<center>
+												<img src="https://dl.dropboxusercontent.com/s/44lwl2nogh9mhff/stereo-basis.png?dl=0" alt="stereo-basis" style="width:30%;">
+												<figcaption style="text-align: center;"><font face="Raleway" color="#bbbbbb">Fig.3 - Two pairs of cameras with different stereo basis (S1 and S2) and their corresponding visual angles viewing a near and a far object. Visual angle decreases with the distance of the object. Cameras with larger stereo basis (S2) tends to decrease at a slower rate.</font></figcaption>
+											</center>
+										</figure>
+										<p>
+											It seems that the bigger the stereo basis the more three-dimensional an object appears (be able to see more of the back of an object). However, it's of course not a good idea to have the baseline to be too big. First, a large camera baseline corresponds to a large retinal divergence, causing undesirable discomfort. Secondly, a large camera baseline makes farther objects appear 3D-dimensional, not that it's bad, but it contradicts to our common sense. We are used to the assumption of farther things to be more flat, and thus our brain would interpret the 3D-dimensional objects to be rather close. This unnaturally small illusion is named the "puppet-theater effect" (different from the miniature effect that is artistically used in photography using tilt-shift lens).
+										</p>
+										<li> Focal Length / Perspective: </li>
+										<p>
+											The larger the focal length the more flat the scene appears.
+											Small focal length corresponds to large field of view and to the extreme, fish-eye lenses. Large focal length has small field of view, to the other extreme, telephoto lenses. From basic geometry, the perspective from 3D world to 2D image plane changes when we use different focal lengths to capture an object, think of how a camera can make a face look so different (from very thin to flat) when varying focal lengths. Same rule applies here, that a shorter focal length would convey more depth perception than a longer focal length that makes objects at different depths look flat as if they sit on the same plane (See figure below). However, it's neither the case to always use short focal length, as wide field of view often makes boundary objects look visually distorted, and sometimes the depth perception can be so prominent that the regions can be undesirably occluded by front objects (notice how the man at the back becomes more occluded under shorter focal lengths).
+										</p>
+										<figure>
+											<center>
+												<img src="https://dl.dropboxusercontent.com/s/aapdpop7qg9ki2j/stereo-focallength.png?dl=0" alt="stereo-focal-length" style="width:30%;">
+												<figcaption style="text-align: center;"><font face="Raleway" color="#bbbbbb">Fig.4 - The depth perception between the two subjects changes due to different focal lengths.</font></figcaption>
+											</center>
+										</figure>
+										<li> Aperture / Depth of Field: </li>
+										<p>
+											The larger the aperture the more popped out a subject appears to be. Larger aperture makes very shallow depth of field (DOF), blurring out the rest of the scene except for the in-focus planes. This is not desirable in most movie-making as backgrounds are often important to convey a story as well. Scenes with a large aperture choice are mostly close-up shots and for artistic bokeh (the aesthetic quality of the blur) purpose.
+										</p>
+										<figure>
+											<center>
+												<a href="https://cdn.photographylife.com/wp-content/uploads/2016/12/DoF-sketch.jpg">
+													<img src="https://dl.dropboxusercontent.com/s/64paw8ziarw1hpu/stereo-dof.png?dl=0" alt="stereo-dof" style="width:40%;">
+												</a>
+												<figcaption style="text-align: center;"><font face="Raleway" color="#bbbbbb">Fig.5 - Aperture and Depth of Field. Large aperture makes objects appear more "popped out".</font></figcaption>
+											</center>
+										</figure>
+										<li> Lighting / Shadow: </li>
+										<p>
+											Shadow information delivers 3D sensation of a subject or a scene. Area or planar lighting makes the objects look uniformly lit and thus more flat looking. This means if we cannot sacrifice our camera or lens choices, we may adjust the lighting of the environment to compensate for potential 3D perception distortion.
+										</p>
+									</ul>
+								</p>
+								<o><font face="Raleway" color="#bbbbbb">CONTROL EXPERIMENTS</font></o>
+								<P>
+									To bridge the gap between theoretical hypothesis and actual human perception. A group of researchers from Japan conducted a control experiment on how image recording affects the stereoscopic perception, especially on the cardboard effect distortion.
+								</P>
+								<p>
+									Along the literature review process I did for this lecture, I spent more time reading about 3D movie-making, which is quite interesting and I'd love to share what I've learned and also some fascinating and ancient academic papers.
+								</p>
+								<o><font face="Raleway" color="#bbbbbb">REFERENCES</font></o>
+								<p>
+									<ul style="margin-top:-30px;">
+										<li> <i>Stereoscopic Perceptions of Size, Shape, Distance and Direction</i>, by D.L.MacADAM in 1954. The interview between MacADAM and a filmmaker in the attachment is particularly a pleasure reading.</li>
+										<li> <i>Perceptual Issues in Stereoscopic Signal Processing</i>, by Scott J. Daly et al. I found Fig.3 to be a good illustration of understanding different affecting mis-perception causes.</li>
+										<li> <i>A study on the relationship between shooting conditions and cardboard effect of stereoscopic images</i>, by H. Yamanoue et al. This paper is about the aforementioned control experiment.
+										<li>I used XstereO Player to display 3D images shown in this blog.</li>
+										<li>A <a href="http://www.motionesque.com/stereography-and-the-cardboard-effect/" target="_blank">Bachelor thesis </a> on the cardboard effect.</li>
+									</ul>
+								</p>
+								<!-- <o><font face="Raleway" color="#bbbbbb">FUN FACTS</font></o>
+								<p>
+									A few fun facts throughout these days:
+									<ul style="margin-top:-30px;">
+										<li><a href="https://people.eecs.berkeley.edu/~malik/">Jitendra</a> tells people to stop writing starting sentence like "object detection is an important task in computer vision"</li>
+										<li>A big screen plays World Cup live, and is super packed during the breaks (and also non-breaks)</li>
+										<li>The food is really not bad, and there is ice cream for snack</li>
+										<li>More than half of the industrial sponsors are Chinese companies</li>
+										<li>The best paper requires GPU training of 40K+ hours </li>
+									</ul>
+								</p> -->
+								<footer>
+									<ul class="stats">
+										<li><a href="#">KNOWLEDGE</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
